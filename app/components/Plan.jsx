@@ -4,10 +4,8 @@ import {getTokenData} from '../helpers/token';
 
 import {frequency} from '../helpers/converters';
 
-const decodedToken = getTokenData(sessionStorage.getItem('token'));
-
 function Plan ({plan, planId, updateSubscription, numOfplans}) {
-
+  const decodedToken = getTokenData(sessionStorage.getItem('token'));
   const headingClass = 'plan-'+plan.name;
   const btnClass = planId === plan.id ? 'btn btn-lg btn-block btn-active' : 'btn btn-block btn-lg btn-' + plan.name;
   const planClass = planId === plan.id ? 'plan-card plan-selected' : 'plan-card';
