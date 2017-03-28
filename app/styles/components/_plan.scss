@@ -1,0 +1,98 @@
+.plan {
+  
+  &-col {
+    margin-bottom: 20px;
+  }
+  
+  &-card {
+    background: #fff;
+    padding: 30px;
+    min-height: 400px;
+    position: relative;
+    text-align: center;
+  }
+  
+  &-title {
+    text-transform: capitalize;
+  }
+  
+  &-price {
+    margin: 50px 0;
+    text-align: center;
+    
+    & h4 {
+      font-size: 38px;
+      margin: 0 0 5px;
+    }
+    
+  }
+  
+  &-pluto {
+    color: $plutoColor;
+  }
+  
+  &-mars {
+    color: $marsColor;
+  }
+  
+  &-atom {
+    color: $atomColor;
+  }
+  
+  &-jupiter {
+    color: $jupiterColor;
+  }
+  
+  &-interval {
+    font-size: 16px;
+    display: inline;
+    opacity: 0.6;
+  }
+  
+  &-description {
+    margin: 10px 0;
+  }
+  
+  &-cta {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    text-align: center;
+  }
+  
+  &-selected {
+    border-color: #5fcf80;
+    border: 3px solid #5fcf80;
+    background-color: #fff;
+  }
+  
+  
+} 
+
+.btn {
+  &-atom {
+    background: $atomColor;
+    color: $textColor;
+  }
+  
+  &-pluto {
+    background: $plutoColor;
+    color: $textColor;
+  }
+  
+  &-mars {
+    background: $marsColor;
+    color: $textColor;
+  }
+  
+  &-jupiter {
+    background: $jupiterColor;
+    color: $textColor;
+  }
+  
+  &-btn-active {
+    background: #fff;
+    color: $currentPlanColor;
+  }
+}

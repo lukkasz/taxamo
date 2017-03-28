@@ -1,0 +1,33 @@
+.navbar-taxamo {
+ background: $navColor;
+ 
+ & .navbar-brand {
+   color: $textColorNav;
+   font-size: 22px;
+   letter-spacing: 2px;
+   margin: 10px 0;
+   &:hover, 
+   &:active,
+   &:focus {
+     color: #fff;
+   }
+ }
+ 
+ & .navbar-nav-taxamo >li > a {
+  color: $textColorNav;
+  margin: 10px 0;
+  letter-spacing: 1px;
+  font-size: 16px;
+  &:hover,
+  &:active,
+  &:focus {
+    color: #fff;
+  }
+  
+ }
+
+}
+
+ 
+
+ 

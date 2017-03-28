@@ -1,0 +1,18 @@
+.welcome {
+  border: 1px solid $lineColor;
+  border-radius: 5px;
+  padding: 20px 40px;
+  margin-top: 20px;
+  
+  & h1 {
+    text-align: center;
+    margin: 20px 0 40px;
+    & small {
+      font-size: 50%;
+    }
+  }
+  
+  & p {
+    font-size: 16px;  
+  } 
+}
