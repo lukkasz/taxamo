@@ -1,32 +1,16 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 
-import {getTokenData, validateToken} from '../helpers/token';
-import ProfileContainer from './ProfileContainer';
-import Error from './Error';
+import Nav from './Nav';
 
-const App = (props) => {
-  sessionStorage.clear();
-  const token = props.location.query.token;
- 
-  if (!validateToken(token)) {
-    return (
-      <Error message={'Wrong Token'}/>
-    );
-  }
-  
-  sessionStorage.setItem('token', token);
-  
+function App(props) {
   return (
     <div>
-      <ProfileContainer />
-    </div>
+      <Nav />
+      <div className="container app-container">
+        {props.children}
+      </div>
+    </div>  
   );
-};
-
-App.propTypes = {
-  location: PropTypes.object
-};
-
-
+}
 
 export default App;

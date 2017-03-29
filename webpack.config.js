@@ -33,11 +33,11 @@ module.exports = {
       NODE_ENV: JSON.stringify('production')
     }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    })
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: false
+    //   }
+    // })
   ],
   devtool:  process.env.NODE_ENV === 'production' ? undefined : 'eval-source-map'
 };

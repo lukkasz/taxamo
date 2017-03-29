@@ -11,7 +11,7 @@ class Profile extends Component {
     super(props);
     this.decodedToken = getTokenData(sessionStorage.getItem('token'));
   }
-  
+
   componentDidMount(){
     this.props.resetDataError();
     this.props.fetchData(this.decodedToken.subscriptionId);
@@ -19,23 +19,24 @@ class Profile extends Component {
   
   render(){
     const { subscription, plans, isFetching, error } = this.props;
-
-    if (plans.allIds.length !== 0 && subscription.planId !== null && !isFetching && error === null) {
-      
-      return (
-        <div className="profile-container">
-          <SubscriptionDetails subscription={subscription} plans={plans}/>
-          <hr />
-          <PlansList plansById={plans.byId} allowedPlans={this.decodedToken.allowedPlansId}  />
-        </div>
-      );
-      
-    } else if (!isFetching && error !== null) {
-      return <Error message={error} />;
-    } else {
+    
+    if (isFetching || (!plans.allIds.length && !subscription.planId)) {
       return <div className="loading">Loading&#8230;</div>;
-    }  
-  }
+    } 
+    
+    if (error) {
+      return <Error message={error} />; 
+    }
+
+    return (
+      <div className="profile-container">
+        <SubscriptionDetails subscription={subscription} plans={plans}/>
+        <hr />
+        <PlansList plansById={plans.byId} allowedPlans={this.decodedToken.allowedPlansId}  />
+      </div>
+    );
+  
+  }   
 }
 
 Profile.propTypes = {
@@ -49,3 +50,9 @@ Profile.propTypes = {
 };
 
 export default Profile;
+
+
+/*       <SubscriptionDetails subscription={subscription} plans={plans}/>
+        <hr />
+        <PlansList plansById={plans.byId} allowedPlans={this.decodedToken.allowedPlansId}  />
+*/

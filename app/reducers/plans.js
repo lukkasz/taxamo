@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux';
+import { FETCH_PLANS_SUCCESS } from '../constants/actionTypes';
 
 const INITIAL_STATE = {byId:{}, allIds:[]};
 
@@ -17,7 +17,7 @@ const getAllIds = (array) =>
 
 const plans = (state=INITIAL_STATE, action) => {
   switch(action.type) {
-    case 'FETCH_PLANS_SUCCESS':
+    case FETCH_PLANS_SUCCESS:
       return { 
         ...state, 
         byId: covertToById(action.payload.data), 

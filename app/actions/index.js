@@ -1,20 +1,19 @@
 import axios from 'axios';
 import querystring from 'querystring';
+import {
+  FETCH_DATA_REQUEST,
+  FETCH_DATA_SUCCESS,
+  FETCH_DATA_FAILURE,
+  FETCH_PLANS_SUCCESS,
+  FETCH_SUBSCRIPTION_SUCCESS,
+  UPDATE_SUBSCRIPTION_REQUEST,
+  UPDATE_SUBSCRIPTION_SUCCESS,
+  UPDATE_SUBSCRIPTION_FAILURE,
+  RESET_DATA_ERROR
+} from '../constants/actionTypes';
 
-const HEADER = {'Authorization': 'Bearer sk_test_g6rDvSYh0cPVO1bBsSTuEC8H'};
-const ROOT_URL = 'https://api.stripe.com/v1';
+import { HEADER, ROOT_URL } from '../constants/axios-stripe';
 
-export const FETCH_PLANS_SUCCESS = 'FETCH_PLANS_SUCCESS';
-export const FETCH_SUBSCRIPTION_SUCCESS = 'FETCH_SUBSCRIPTION_SUCCESS';
-
-export const UPDATE_SUBSCRIPTION_REQUEST = 'UPDATE_SUBSCRIPTION_REQUEST';
-export const UPDATE_SUBSCRIPTION_SUCCESS = 'UPDATE_SUBSCRIPTION_SUCCESS';
-export const UPDATE_SUBSCRIPTION_FAILURE = 'UPDATE_SUBSCRIPTION_FAILURE';
-
-export const RESET_DATA_ERROR = 'RESET_DATA_ERROR';
-export const FETCH_DATA_REQUEST = 'FETCH_DATA_REQUEST';
-export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS';
-export const FETCH_DATA_FAILURE = 'FETCH_DATA_FAILURE';
 
 // Plan async action
 export const fetchPlans = () => (dispatch)  => {
@@ -63,7 +62,6 @@ export const fetchData = (subscriptionId) => (dispatch) => {
     });
   });
 };
-
 
 export const updateSubscription = (subscriptionId, plan) => (dispatch) => {
   dispatch({
