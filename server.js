@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + "/public"));
 
-app.get('/*', (req, res) => {
+app.get('*', (req, res) => {
   return res.render('index', {token: generateToken(merchantData)});
 });
 

@@ -8,8 +8,7 @@
     "build": "export NODE_ENV=production && npm run clean && npm run build-css && npm run build-js",
     "build-js": "./bin/build-js",
     "build-css": "./bin/build-css",
-    "start": "npm run build && node server.js",
-    "dev": "node server.js"
+    "start": "npm run build && node server.js"
   },
   "author": "Luka Mandic",
   "license": "MIT",

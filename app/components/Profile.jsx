@@ -12,6 +12,7 @@ class Profile extends Component {
     this.decodedToken = getTokenData(sessionStorage.getItem('token'));
   }
 
+  
   componentDidMount(){
     this.props.resetDataError();
     this.props.fetchData(this.decodedToken.subscriptionId);
@@ -50,9 +51,3 @@ Profile.propTypes = {
 };
 
 export default Profile;
-
-
-/*       <SubscriptionDetails subscription={subscription} plans={plans}/>
-        <hr />
-        <PlansList plansById={plans.byId} allowedPlans={this.decodedToken.allowedPlansId}  />
-*/

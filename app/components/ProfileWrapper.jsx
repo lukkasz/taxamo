@@ -1,17 +1,15 @@
 import React, {PropTypes} from 'react';
+import { browserHistory } from 'react-router';
 
 import { validateToken} from '../helpers/token';
 import ProfileContainer from './ProfileContainer';
-import Error from './Error';
+
 
 const ProfileWrapper = (props) => {
-  sessionStorage.clear();
-  const token = props.location.query.token;
- 
+  const token = props.location.query.token || null;
+  
   if (!validateToken(token)) {
-    return (
-      <Error message={'Wrong Token'}/>
-    );
+   browserHistory.push('/');
   }
   
   sessionStorage.setItem('token', token);
@@ -22,6 +20,7 @@ const ProfileWrapper = (props) => {
     </div>
   );
 };
+
 
 ProfileWrapper.propTypes = {
   location: PropTypes.object

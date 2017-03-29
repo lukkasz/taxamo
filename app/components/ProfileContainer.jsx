@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import Profile from './Profile';
 
-
 const mapStateToProps = (state) => ({
   plans: state.plans,
   subscription: state.subscription,
